@@ -1,3 +1,3 @@
 # Rock-Paper-Scissors
 
-# This game will help hone my skills on problem-solving 
+# This game will help hone my skills on problem-solving.
