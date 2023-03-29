@@ -1,3 +1,4 @@
+
 const playerInput = document.querySelector("select");
 
 const playerOutput = document.querySelector("#playerOutput");
@@ -8,15 +9,19 @@ playerInput.addEventListener("change", () => {
 
   //Get player choice
   let playerOption = playerInput.value;
-
+console.log(playerOption)
   //Generate random number between 0 and 2
   let computerNum = Math.floor(Math.random() * 3);
 
-  //Generate computerChoice function call
-  computerChoice();
+  //Generate computer choice function call
+  getComputerChoice();
+console.log(getComputerChoice());
 
-//Function: Get computer Choice
-function computerChoice() {  
+//Compare players
+comparePlayers();
+
+//Function: Get computer choice
+function getComputerChoice() {  
 
   //Link each digit to a choice e.g. 0 is "rock" using if/else if/else
   if (computerNum === 0) {
@@ -27,7 +32,7 @@ function computerChoice() {
     return "scissors";
   }
 
-  /*    
+     
   //Link each digit to a choice e.g. 0 is "rock" using switch
   switch (true) {
     case computerNum === 0:
@@ -40,81 +45,96 @@ function computerChoice() {
       return "scissors";
       break;
   }
-*/
 }
-
-  //Compare players (win/ draw) function call
-  comparePlayers();
 
 //Function: Compare players (win/ draw)
 function comparePlayers() {
-  if (playerOption === "rock" && computerChoice() === "paper") {
+  if (playerOption === "rock" && getComputerChoice() === "paper") {
     playerOutput.textContent =
       "Player's Choice: " +
       playerOption
     computerOutput.textContent =
       "Computer's choice: " +
-      computerChoice() 
+      getComputerChoice() 
     results.textContent =
-      "Computer wins!";
-  } else if (playerOption === "paper" && computerChoice() === "rock") {
+      "Computer wins! Paper covers Rock.";
+      return;
+
+  } else if (playerOption === "paper" && getComputerChoice() === "rock") {
     playerOutput.textContent =
       "Player's Choice: " +
       playerOption
     computerOutput.textContent =
       "Computer's choice: " +
-      computerChoice() 
+      getComputerChoice() 
     results.textContent =
-      "Congratulations! You win!";
-  } else if (playerOption === "rock" && computerChoice() === "scissors") {
+      "Congratulations! You win! Paper covers rock";
+      return;
+
+  } else if (playerOption === "rock" && getComputerChoice() === "scissors") {
     playerOutput.textContent =
       "Player's Choice: " +
       playerOption
     computerOutput.textContent =
       "Computer's choice: " +
-      computerChoice() 
+      getComputerChoice() 
     results.textContent =
-      "Congratulations! You win!";
-  } else if (playerOption === "scissors" && computerChoice() === "rock") {
+      "Congratulations! You win! Rock crushes scissors.";
+      return;
+
+  } else if (playerOption === "scissors" && getComputerChoice() === "rock") {
     playerOutput.textContent =
     "Player's Choice: " +
     playerOption
   computerOutput.textContent =
     "Computer's choice: " +
-    computerChoice() 
+    getComputerChoice() 
   results.textContent =
-      "Computer wins!";
-  } else if (playerOption === "paper" && computerChoice() === "scissors") {
+      "Computer wins! Rock crushes Scissors";
+      return;
+
+  } else if (playerOption === "paper" && getComputerChoice() === "scissors") {
     playerOutput.textContent =
     "Player's Choice: " +
     playerOption
   computerOutput.textContent =
     "Computer's choice: " +
-    computerChoice() 
+    getComputerChoice() 
   results.textContent =
-      "Computer wins!";
-  } else if (playerOption === "scissors" && computerChoice() === "paper") {
+      "Computer wins! Scissors cuts paper";
+      return;
+
+  } else if (playerOption === "scissors" && getComputerChoice() === "paper") {
     playerOutput.textContent =
       "Player's Choice: " +
       playerOption
     computerOutput.textContent =
       "Computer's choice: " +
-      computerChoice() 
+      getComputerChoice() 
     results.textContent =
-      "Congratulations! You win!";
-  } else if (playerOption === computerChoice()) {
+      "Congratulations! You win! Scissors cuts Paper";
+      return;
+
+  } else if(playerOption === getComputerChoice()) {
     playerOutput.textContent =
       "Player's Choice: " +
       playerOption
     computerOutput.textContent =
       "Computer's choice: " +
-      computerChoice() 
+      getComputerChoice() 
     results.textContent =
       "A draw";
+      return;
+  }else{
+    playerOutput.textContent = "";      
+    computerOutput.textContent = "";     
+    results.textContent = playerOption;
+      return;
   } 
 }
 
 });
+
 
 
 
