@@ -1,13 +1,18 @@
 //TOP's Suggestions Incorporated
 
-
 //Create prompt to get number of rounds from the user
 const gameNum = prompt("Enter how many rounds you wish to play.");
-console.log(Number(gameNum));
+//console.log(Number(gameNum));
 
+//Error checking of user amount
+if(isNaN(gameNum) || gameNum === ""){
+  alert("Please enter a number!");
+}else if(gameNum === null){
+  alert("You exited the game!")
+ 
+}
 
 //Create variables to store querySelector values
-//const playerInput = document.querySelector("input");
 const playerOutput = document.querySelector("#playerOutput");
 const computerOutput = document.querySelector("#computerOutput");
 const results = document.querySelector("#results");
@@ -15,10 +20,16 @@ const pScoreTag = document.querySelector("#playerScore");
 const cScoreTag = document.querySelector("#computerScore");
 const finalResultsTag = document.querySelector("#finalResults");
 
-//Declare and assign player and computer scores;
+
+
+//Create boolean playGame to play or exit game
+let playGame = true;
+
+//Declare and assign player, computer scores and counter;
 let cScore = 0;
 let pScore = 0;
 let counter = 0;
+
 
 //Call functions
 //Call game
@@ -27,12 +38,12 @@ game();
 //Create Functions
 //Function: Play game multiple times
 function game() {
-  
+ 
   for(i = 1; i <= Number(gameNum) ; i++){
     playRound()    
  //console.log(i);
-  }
   
+}
 }
 
 //Function: Play round
@@ -293,7 +304,7 @@ function playRound() {
   //Function: Determine winner based on score
   function calculateScore() {
     if (pScore === 0 && cScore === 0) {
-      finalResultsTag.textContent = "None! A game has not been played as yet!";
+      finalResultsTag.textContent = "None!";
     } else if (pScore > cScore) {
       finalResultsTag.textContent =
         "Congrats! You win with " + pScore + " out of " + counter + " rounds";
@@ -306,3 +317,4 @@ function playRound() {
     return finalResultsTag.textContent;
   }
 }
+
