@@ -14,46 +14,40 @@ let cScore = 0;
 let pScore = 0;
 let counter = 0;
 
-//Call game function
+//Call functions
+//Call game
 game();
 
-
-//Play game multiple times function
+//Create Functions
+//Function: Play game multiple times
 function game(){
-
-  playRound();
-  
-  playRound();
+  playRound();  
+ //playRound();
+  //playRound();
 }
 
 
-//Create a playRound function
+//Function: Play round
 function playRound() {
 //Create variables for player and computer choices to get to compareSelections
 playerSelection = getPlayerInput();
 computerSelection = getComputerChoice();
 
+//Logging to console
+//console.log(playerSelection);
+//console.log(computerSelection);
 
+//Call Function
+compareSelections(playerSelection, computerSelection);
 
-//Function call
-randomNum();
-
-console.log(playerSelection);
-console.log(computerSelection);
-
-
-console.log(compareSelections(playerSelection, computerSelection));
-
-//Create getPlayerInput, getComputerChoice and compareSelections functions
-
+//Function: getPlayerInput
 //Get input/ choice of player
 function getPlayerInput() {
-
   
   //Use prompt to get user input
   let playerInput = prompt("Type: 'rock' or 'paper', or 'scissors'.", "");
 
-  //Error checking of input
+  //Function: Error checking of input
   //Give message for cancel and no input
   if (playerInput === null) {
     results.textContent = "You exited the playRound!";
@@ -73,6 +67,9 @@ function getPlayerInput() {
   }
   return playerInput;
 }
+
+//Call randomNum
+randomNum();
 
 //Function: Generate random number
 function randomNum() {
@@ -116,53 +113,122 @@ function compareSelections(playerSelection, computerSelection) {
   //Count number of rounds
   counter = counter + 1; 
   if (playerSelection === "rock" && computerSelection === "paper") {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "Computer wins! Paper covers Rock.");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "Computer wins! Paper covers Rock.");
+
+
+    console.log("Player's Choice: " + playerSelection);
+   console.log("Computer's choice: " + computerSelection);
+    console.log("Computer wins! Paper covers Rock.");
+
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+   //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "Computer wins! Paper covers Rock.");
+
     cScore = cScore + 1;    
     cScoreTag.textContent = cScore;
     pScoreTag.textContent = pScore;
     
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "Congratulations! You win! Paper covers rock");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "Congratulations! You win! Paper covers rock");
+
+    console.log("Player's Choice: " + playerSelection);
+    console.log("Computer's choice: " + computerSelection);
+    console.log("Congratulations! You win! Paper covers rock");
+
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+   //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "Congratulations! You win! Paper covers rock");
+
     pScore = pScore + 1;
     pScoreTag.textContent = pScore;
     cScoreTag.textContent = cScore;
     
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "Congratulations! You win! Rock crushes scissors.");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "Congratulations! You win! Rock crushes scissors.");
+  
+    console.log("Player's Choice: " + playerSelection);
+    console.log("Computer's choice: " + computerSelection);
+    console.log("Congratulations! You win! Rock crushes scissors.");
+
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+    //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "Congratulations! You win! Rock crushes scissors.");
+
     pScore = pScore + 1
     pScoreTag.textContent = pScore;
     cScoreTag.textContent = cScore;
+
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "Computer wins! Rock crushes Scissors");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "Computer wins! Rock crushes Scissors");
+   
+    console.log("Player's Choice: " + playerSelection);
+    console.log("Computer's choice: " + computerSelection);
+    console.log("Computer wins! Rock crushes Scissors");
+    
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+    //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "Computer wins! Rock crushes Scissors");
+
     cScore = cScore + 1;
     cScoreTag.textContent = cScore;
     pScoreTag.textContent = pScore;
+
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "Computer wins! Scissors cuts paper");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "Computer wins! Scissors cuts paper");
+   
+    console.log("Player's Choice: " + playerSelection);
+    console.log("Computer's choice: " + computerSelection);
+    console.log("Computer wins! Scissors cuts paper");
+
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+    //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "Computer wins! Scissors cuts paper");
+  
     cScore = cScore + 1
     cScoreTag.textContent = cScore;
     pScoreTag.textContent = pScore;
+
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "Congratulations! You win! Scissors cuts Paper");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "Congratulations! You win! Scissors cuts Paper");
+   
+    console.log("Player's Choice: " + playerSelection);
+    console.log("Computer's choice: " + computerSelection);
+    console.log("Congratulations! You win! Scissors cuts Paper");
+
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+    //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "Congratulations! You win! Scissors cuts Paper");
+    
+
     pScore = pScore + 1;
     pScoreTag.textContent = pScore;
     cScoreTag.textContent = cScore;
+
   } else if (playerSelection === computerSelection) {
-    playerOutput.textContent = "Player's Choice: " + playerSelection;
-    computerOutput.textContent = "Computer's choice: " + computerSelection;
-    console.log(results.textContent = "A draw");
+    alert("Player's Choice: " + playerSelection +
+    "Computer's choice: " + computerSelection +
+    "A draw");
+
+    console.log("Player's Choice: " + playerSelection);
+    console.log("Computer's choice: " + computerSelection);
+    console.log("A draw");
+
+    //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
+    //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
+    //console.log(results.textContent = "A draw");
+
     cScore = cScore + 1;
     pScore = pScore + 1;
     pScoreTag.textContent = pScore;
@@ -170,14 +236,14 @@ function compareSelections(playerSelection, computerSelection) {
     
   }
   return (
-    playerOutput.textContent, computerOutput.textContent, results.textContent, cScore, pScore
+    /*playerOutput.textContent, computerOutput.textContent, results.textContent,*/ cScore, pScore
   );
 }
 
 //Call function
 calculateScore();
 
-//Function to determine winner based on score
+//Function: Determine winner based on score
 function calculateScore(){
   if(pScore === 0 && cScore === 0){
     finalResultsTag.textContent = "None! A game has not been played as yet!"
