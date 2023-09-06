@@ -229,12 +229,12 @@ function playRound() {
           "Computer's choice: " +
           computerSelection +
           "\n" +
-          "Computer wins! Scissors cuts paper"
+          "Computer wins! Scissors cut paper"
       );
 
       console.log("Player's Choice: " + playerSelection);
       console.log("Computer's choice: " + computerSelection);
-      console.log("Computer wins! Scissors cuts paper");
+      console.log("Computer wins! Scissors cut paper");
 
       //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
       //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
@@ -254,12 +254,12 @@ function playRound() {
           "Computer's choice: " +
           computerSelection +
           "\n" +
-          "Congratulations! You win! Scissors cuts Paper"
+          "Congratulations! You win! Scissors cut Paper"
       );
 
       console.log("Player's Choice: " + playerSelection);
       console.log("Computer's choice: " + computerSelection);
-      console.log("Congratulations! You win! Scissors cuts Paper");
+      console.log("Congratulations! You win! Scissors cut Paper");
 
       //console.log(playerOutput.textContent = "Player's Choice: " + playerSelection);
       //console.log(computerOutput.textContent = "Computer's choice: " + computerSelection);
